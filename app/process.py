@@ -59,6 +59,18 @@ def process(request):
                 error = "Enter a valid input ..."
                 ans = "-"
                 col = "danger"
+        if cfrom == 3:
+            try:
+                if cto == 0:
+                    op = int(inp,16)
+                if cto == 1:
+                    op = str(bin(int(inp, 16)))[2:]
+                if cto == 2:
+                    op = str(oct(int(inp, 16)))[2:]
+            except:
+                error = "Enter a valid input ..."
+                ans = "-"
+                col = "danger"
 
         ans = "{} to {} conversion for {} would be {}".format(ops[cfrom],ops[cto],inp,op)
         error = "Your request has been processed"
