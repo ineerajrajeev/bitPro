@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+  <title>BitPro | Home</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="static/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top" />
+      </a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <form method="post" action="#">
+      {% csrf_token %}
+      <div class="input-group m-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Input</span>
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default" value="{{inpval}}" name="inp" />
+      </div>
+
+      <div class="input-group m-3">
+        <label class="input-group-text" for="inputGroupSelect01">Convert from</label>
+        <select class="form-select" id="inputGroupSelect01" name="cfrom">
+          <option selected>Choose...</option>
+          <option value="0">Decimal</option>
+          <option value="1">Binary</option>
+          <option value="2">Octal</option>
+          <option value="3">Hexadecimal</option>
+        </select>
+      </div>
+
+      <div class="input-group m-3">
+        <label class="input-group-text" for="inputGroupSelect01">Convert to</label>
+        <select class="form-select" id="inputGroupSelect01" name="cto">
+          <option selected>Choose...</option>
+          <option value="0">Decimal</option>
+          <option value="1">Binary</option>
+          <option value="2">Octal</option>
+          <option value="3">Hexaecimal</option>
+        </select>
+      </div>
+      <div class="d-grid gap-2 m-3">
+        <button class="btn btn-primary" type="submit">Button</button>
+      </div>
+    </form>
+    <div class="alert alert-{{style}} m-3" role="alert">
+      {{error}}
+    </div>
+    <div class="card m-3 text-center">
+      <div class="card-header">Answer</div>
+      <div class="card-body">
+        <h4 class="card-title">{{ans}}<span class=""></h4>
+        <p class="card-text">Thanks for using our tool</p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
